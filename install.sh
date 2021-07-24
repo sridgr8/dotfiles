@@ -1,6 +1,7 @@
 # Before running this file, do the following:
 # To make this file executable if it isn't already: chmod +x install.sh
-# To run this file: ./install.sh /Users/srinivasulu/
+# Syntax to run this file: ./install.sh <home_directory>
+# Example to run this file: ./install.sh /Users/srinivasulu/
 # Location of the dotfiles folder: /Users/srinivasulu/Desktop/Projects/dotfiles
 
 if [ "$#" -ne 1 ]; then
