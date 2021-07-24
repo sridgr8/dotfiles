@@ -21,19 +21,20 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 
 # Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats '%F{white}on branch %B%F{red}%b '
+zstyle ':vcs_info:git:*' formats '%F{71}on branch%f %B%F{166}%b '
  
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 
 PROMPT='' # create the variable
-PROMPT='%F{green}%n@' # username
-PROMPT+='%F{green}%m ' # machine name
-PROMPT+='%F{white}in ' # normal text
-# PROMPT+='%B%F{cyan}${PWD/#$HOME/~}%b ' # add the current directory information
-PROMPT+='%B%F{cyan}%1~%b ' # add the current directory information
+PROMPT+='%F{28}%n%f' # username
+PROMPT+='%B%F{35}@%f%b' # at the rate symbol in bold
+PROMPT+='%F{28}%m%f ' # machine name
+PROMPT+='%F{24}in%f ' # normal text
+# PROMPT+='%B%F{38}${PWD/#$HOME/~}%f%b ' # add the current directory information
+PROMPT+='%B%F{38}%1~%f%b ' # add the current directory information
 PROMPT+='${vcs_info_msg_0_}' # add the git branch infomation
 PROMPT+=$'\n' # add a new line
-PROMPT+='%F{yellow}$ ' # the symbol at the end
+PROMPT+='%F{178}$%f ' # the symbol at the end
 PROMPT+='%b' # reset bold text
-PROMPT+='%F{white}' # reset color
+# PROMPT+='%F{white}' # reset color
