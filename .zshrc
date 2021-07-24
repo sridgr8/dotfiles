@@ -27,7 +27,8 @@ zstyle ':vcs_info:git:*' formats '%F{white}on branch %B%F{red}%b '
 setopt PROMPT_SUBST
 
 PROMPT='' # create the variable
-PROMPT='%B%F{green}%n %b' # username
+PROMPT='%B%F{green}%n%b@' # username
+PROMPT+='%F{green}%m ' # machine name
 PROMPT+='%F{white}in ' # normal text
 # PROMPT+='%B%F{cyan}${PWD/#$HOME/~}%b ' # add the current directory information
 PROMPT+='%B%F{cyan}%1~%b ' # add the current directory information
