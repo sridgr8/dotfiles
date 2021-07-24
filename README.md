@@ -1,0 +1,1 @@
+This is the git repository to keep track of my essential mac settings.
