@@ -14,7 +14,7 @@ homedir=$1
 # dotfiles directory
 dotfiledir=${homedir}/Desktop/Projects/dotfiles
 
-# list of files/folders to symlink in ${homedir}
+# list of files/folders to symlink in ${homedir} - space separated values
 files="zshrc"
 
 # change to the dotfiles directory
