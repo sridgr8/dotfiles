@@ -1,6 +1,6 @@
 # HOMEBREW THINGS
 # Install Xcode Tools
-xcode-select —install
+xcode-select —-install
 
 # Install youtube-dl
 brew install youtube-dl
