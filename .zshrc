@@ -39,3 +39,5 @@ PROMPT+=$'\n' # add a new line
 PROMPT+='%F{178}$%f ' # the symbol at the end
 PROMPT+='%b' # reset bold text
 # PROMPT+='%F{white}' # reset color
+
+autoload -Uz compinit && compinit
