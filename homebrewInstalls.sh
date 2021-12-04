@@ -13,3 +13,9 @@ brew install speedtest-cli
 
 # Install Cask
 brew install cask
+
+# Install Monitor Control
+brew install --cask monitorcontrol
+
+# Install eqMac
+brew install --cask eqmac
