@@ -19,3 +19,9 @@ brew install --cask monitorcontrol
 
 # Install eqMac
 brew install --cask eqmac
+
+# Install NodeJS
+brew install node
+
+# Install Playwright
+npm i -D playwright
