@@ -36,8 +36,8 @@ PROMPT+='%F{96}at%f ' # normal text
 PROMPT+='%F{97}${PWD/#$HOME/~}%f ' # add the current directory information
 PROMPT+='${vcs_info_msg_0_}' # add the git branch infomation
 PROMPT+=$'\n' # add a new line
-PROMPT+='%F{178}$%f ' # the symbol at the end
-PROMPT+='%b' # reset bold text
+PROMPT+='%F{153}$%f' # the symbol at the end
+PROMPT+='%b ' # reset bold text
 # PROMPT+='%F{white}' # reset color
 
 autoload -Uz compinit && compinit
