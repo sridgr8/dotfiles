@@ -12,7 +12,7 @@ fi
 homedir=$1
 
 # dotfiles directory
-dotfiledir=${homedir}/Desktop/Projects/dotfiles
+dotfiledir=${homedir}/Desktop/Code/Projects/dotfiles
 
 # list of files/folders to symlink in ${homedir} - space separated values
 files="zshrc"
