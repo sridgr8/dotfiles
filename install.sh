@@ -2,7 +2,7 @@
 # To make this file executable if it isn't already: chmod +x install.sh
 # Syntax to run this file: ./install.sh <home_directory>
 # Example to run this file: ./install.sh /Users/srinivasulu/
-# Location of the dotfiles folder: /Users/srinivasulu/Desktop/Projects/dotfiles
+# Location of the dotfiles folder: /Users/srinivasulu/Code/Projects/dotfiles
 
 if [ "$#" -ne 1 ]; then
     echo "Usage: install.sh <home_directory>"
@@ -12,7 +12,7 @@ fi
 homedir=$1
 
 # dotfiles directory
-dotfiledir=${homedir}/Desktop/Code/Projects/dotfiles
+dotfiledir=${homedir}/Code/Projects/dotfiles
 
 # list of files/folders to symlink in ${homedir} - space separated values
 files="zshrc"
