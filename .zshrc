@@ -22,27 +22,54 @@ precmd() { vcs_info }
 
 # Format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git:*' formats '%F{71}on branch%f %B%F{166}%b '
+
+
  
-# Set up the prompt (with git branch name)
+# # Set up the prompt (with git branch name)
+# setopt PROMPT_SUBST
+
+
+
+# PROMPT='' # create the variable
+# PROMPT+='%F{28}%n%f' # username
+# PROMPT+='%B%F{35}@%f%b' # at the rate symbol in bold
+# PROMPT+='%F{28}%m%f ' # machine name
+# # PROMPT+='%F{24}in%f ' # normal text
+# PROMPT+='%F{96}in%f ' # normal text
+# # PROMPT+='%B%F{38}%1~%f%b ' # add the current directory information
+# # PROMPT+='%F{96}at%f ' # normal text
+# # PROMPT+='%F{97}${PWD/#$HOME/~}%f ' # add the current directory information
+# # PROMPT+='%F{97}${${PWD/#$HOME/~}%/*}/%f' # add the parent directory information
+# PROMPT+='%F{97}${${PWD/#$HOME/~}%/*}/%f' # add the parent directory information
+# PROMPT+='%B%F{99}%U%1~%u%f%b ' # add the current directory information
+# PROMPT+='${vcs_info_msg_0_}' # add the git branch infomation
+# PROMPT+=$'\n' # add a new line
+# PROMPT+='%F{153}$%f' # the symbol at the end
+# PROMPT+='%b ' # reset bold text
+# # PROMPT+='%F{white}' # reset color
+
+# Function to extract the virtual environment name
+function venv_prompt {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    echo "%F{yellow}($(basename $VIRTUAL_ENV))%f "
+  fi
+}
+
+# Set up the prompt (with git branch name and virtual environment)
 setopt PROMPT_SUBST
 
 PROMPT='' # create the variable
+PROMPT+='$(venv_prompt)' # add the virtual environment name
 PROMPT+='%F{28}%n%f' # username
 PROMPT+='%B%F{35}@%f%b' # at the rate symbol in bold
 PROMPT+='%F{28}%m%f ' # machine name
-# PROMPT+='%F{24}in%f ' # normal text
 PROMPT+='%F{96}in%f ' # normal text
-# PROMPT+='%B%F{38}%1~%f%b ' # add the current directory information
-# PROMPT+='%F{96}at%f ' # normal text
-# PROMPT+='%F{97}${PWD/#$HOME/~}%f ' # add the current directory information
-# PROMPT+='%F{97}${${PWD/#$HOME/~}%/*}/%f' # add the parent directory information
 PROMPT+='%F{97}${${PWD/#$HOME/~}%/*}/%f' # add the parent directory information
 PROMPT+='%B%F{99}%U%1~%u%f%b ' # add the current directory information
-PROMPT+='${vcs_info_msg_0_}' # add the git branch infomation
+PROMPT+='${vcs_info_msg_0_}' # add the git branch information
 PROMPT+=$'\n' # add a new line
 PROMPT+='%F{153}$%f' # the symbol at the end
 PROMPT+='%b ' # reset bold text
-# PROMPT+='%F{white}' # reset color
 
 autoload -Uz compinit && compinit
 
@@ -57,4 +84,6 @@ alias l.='ls -d .* --color=auto'
 
 alias grep='grep --color'
 
-alias python='python3'
+# alias python='python3'
+
+# export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin
